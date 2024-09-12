@@ -61,7 +61,7 @@ function download(filename, text) {
 	document.body.removeChild(element);
 }
 function save() {
-	download('script.js', editor.getValue());
+	download('code.txt', editor.getValue());
 }
 
 clearBtn.addEventListener('click', function () {
