@@ -4,7 +4,7 @@ How to use AI ASSISTANT?
 
 Write your code, copy to clipboard the part which give you problems and click button "AI ASSISTANT". Prompt field will be focued automatically and you can paste your code to chat. 
 
-OR
+OR: 
 Click the prompt field and write your prompt manually.
 
 * application require node.js and OPENAI API KEY.
