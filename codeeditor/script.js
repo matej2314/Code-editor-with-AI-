@@ -67,3 +67,7 @@ function save() {
 clearBtn.addEventListener('click', function () {
 	editor.session.setValue('');
 });
+
+document.querySelector('.ai-assistant').addEventListener('click', function () {
+	document.querySelector('.prompt').focus();
+});
