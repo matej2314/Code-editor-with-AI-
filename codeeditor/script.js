@@ -71,3 +71,9 @@ clearBtn.addEventListener('click', function () {
 document.querySelector('.ai-assistant').addEventListener('click', function () {
 	document.querySelector('.prompt').focus();
 });
+
+document.addEventListener('keydown', function (e) {
+	if ((e.ctrlKey && e.key === 'c') || e.key === 'C') {
+		document.querySelector('.prompt').focus();
+	}
+});
