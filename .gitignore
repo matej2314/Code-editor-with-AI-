@@ -1,0 +1,3 @@
+./codeeditor/node_modules/*
+./gpt_api/node_modules/*
+./gpt_api/.env

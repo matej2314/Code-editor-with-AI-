@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500&display=swap" rel="stylesheet" />
+	<style type="text/css" media="screen">
+		#editor {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	</style>
+	<title>Code Editor and AI Assist</title>
+</head>
+<body>
+	<div class="div-editor" id="editor"></div>
+
+	<div class="btns-container">
+		<button class="btn button-clear">Clear editor</button>
+		<button class="btn download-code">Download</button>
+		<button class="btn ai-assistant">AI ASSISTANT</button>
+		<button class="btn save">Save to db</button>
+	</div>
+	<div class="ai-container">
+		<p class="ai-response" type="text" id="ai-response"></p>
+		<input type="text" class="prompt" id="prompt" placeholder="Write your prompt..."></input>
+		<button type="submit" class="btn-submit">Wyślij</button>
+		<button type="button" class="btn-clear-ai">Clear</button>
+	</div>
+
+	<script src="./ace-builds-master\src\ace.js"></script>
+	<script src="ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="./ace-builds-master\src-noconflict\ext-settings_menu.js"></script>
+	<script type="text/javascript" src="./ace-builds-master\src-noconflict\ext-keybinding_menu.js"></script>
+	<script type="text/javascript" src="./ace-builds-master\src-noconflict\keybinding-vscode.js"></script>
+	<script type="text/javascript" src="./ace-builds-master\src\ext-language_tools.js"></script>
+
+	<script src="ace-builds-master\src\ext-beautify.js"></script>
+	<script src="ace-builds-master\src\ext-inline_autocomplete.js"></script>
+	<script>
+		const langTools = ace.require('ace-builds-master\src\ext-language_tools.js');
+		const editor = ace.edit('editor');
+		editor.setFontSize(18);
+
+		editor.setTheme('ace/theme/tomorrow_night_blue');
+		editor.setKeyboardHandler('ace/keyboard/vscode');
+		editor.execCommand('showSettingsMenu');
+
+		editor.setOptions({
+			tabSize: 4,
+			wrap: false,
+			enableBasicAutocompletion: true,
+			enableInlineAutocompletion: true,
+			enableSnippets: true,
+			enableLiveAutocompletion: true,
+		});
+
+	</script>
+	<script src="script.js"></script>
+</body>
+</html>
